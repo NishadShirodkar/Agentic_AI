@@ -2,13 +2,15 @@
 
 An agentic research system that plans a web search task, gathers sources, scrapes content, filters results, and synthesizes a structured answer.
 
-## Demo Video
+## Demo Video and Documentation
 
 A short walkthrough of the system, showing the agent pipeline (planning → search → scraping → synthesis) and example queries:
 
 👉 https://drive.google.com/file/d/1jBU0loDR2MeOSPiSixb-Mr5EkpXD-QVD/view?usp=sharing
 
 Sample system outputs are documented in [docs/sample-outputs.md](docs/sample-outputs.md).
+
+Evaluation document is in [docs/evaluation.md](docs/evaluation.md).
 
 The project now has a clear frontend/backend split:
 
