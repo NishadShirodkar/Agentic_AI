@@ -4,6 +4,8 @@ An agentic research system that plans a web search task, gathers sources, scrape
 
 ## Demo Video and Documentation
 
+Live app: https://agentic-ai-c5cj.onrender.com
+
 A short walkthrough of the system, showing the agent pipeline (planning → search → scraping → synthesis) and example queries:
 
 👉 https://drive.google.com/file/d/1jBU0loDR2MeOSPiSixb-Mr5EkpXD-QVD/view?usp=sharing
