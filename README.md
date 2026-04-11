@@ -6,8 +6,9 @@ An agentic research system that plans a web search task, gathers sources, scrape
 
 A short walkthrough of the system, showing the agent pipeline (planning → search → scraping → synthesis) and example queries:
 
-👉 https://drive.google.com/file/d/1BTM7RtjRFJMayW-O6w-WTDiv3fSwWkyg/view?usp=sharing
- 
+👉 https://drive.google.com/file/d/1jBU0loDR2MeOSPiSixb-Mr5EkpXD-QVD/view?usp=sharing
+
+Sample system outputs are documented in [docs/sample-outputs.md](docs/sample-outputs.md).
 
 The project now has a clear frontend/backend split:
 
@@ -94,7 +95,7 @@ Web app:
 python backend/app.py
 ```
 
-Open `http://127.0.0.1:5000` in your browser.
+Open `http://127.0.0.1:5001` in your browser.
 
 CLI mode:
 

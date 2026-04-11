@@ -23,6 +23,11 @@
         <p class="subtitle">
           Ask a focused question. Get a synthesized, source-aware answer with structured insights.
         </p>
+        <div class="hero-meta" aria-label="Product highlights">
+          <span>Plan first</span>
+          <span>Search and scrape</span>
+          <span>Grounded synthesis</span>
+        </div>
       </header>
 
       <section class="panel reveal delay-1">
@@ -38,12 +43,28 @@
             ></textarea>
             <button id="submit-btn" type="submit">Run Analysis</button>
           </div>
+          <p class="helper-text">Designed for comparative research, market scans, and source-backed summaries.</p>
         </form>
 
         <div id="status" class="status hidden"></div>
       </section>
 
       <section id="results" class="results hidden reveal delay-2" aria-live="polite">
+        <div class="summary-bar">
+          <article class="summary-card">
+            <span class="summary-label">Sources</span>
+            <strong id="source-count-summary">0</strong>
+          </article>
+          <article class="summary-card">
+            <span class="summary-label">Findings</span>
+            <strong id="findings-count-summary">0</strong>
+          </article>
+          <article class="summary-card">
+            <span class="summary-label">Confidence</span>
+            <strong id="confidence-summary">Unknown</strong>
+          </article>
+        </div>
+
         <article class="card wide">
           <h2>Short Answer</h2>
           <p id="short-answer" class="lead"></p>
@@ -84,6 +105,13 @@
         </div>
       </section>
     </main>
+
+    <div id="loading-stepper" class="loading-stepper hidden" aria-live="polite">
+      <span class="step active">Planning</span>
+      <span class="step">Searching</span>
+      <span class="step">Scraping</span>
+      <span class="step">Synthesizing</span>
+    </div>
 
     <script src="/static/app.js"></script>
   </body>
