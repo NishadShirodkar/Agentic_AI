@@ -1,0 +1,260 @@
+:root {
+  --ink: #1f1f1f;
+  --ink-soft: #4a4a4a;
+  --canvas: #f8f5ef;
+  --panel: #fffdf9;
+  --accent: #0f7b6c;
+  --accent-strong: #0b5f54;
+  --warm: #f3ac3c;
+  --line: #dad3c6;
+  --shadow: 0 14px 35px rgba(54, 47, 34, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: radial-gradient(circle at 18% 16%, #fff5dd 0%, transparent 42%),
+    radial-gradient(circle at 82% 84%, #e7f8f4 0%, transparent 48%), var(--canvas);
+  color: var(--ink);
+  font-family: "Manrope", "Segoe UI", sans-serif;
+}
+
+.page {
+  width: min(1080px, 92vw);
+  margin: 0 auto;
+  padding: 3.5rem 0 5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  margin: 0.25rem 0;
+  font-family: "Sora", "Avenir Next", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: #fff8eb;
+}
+
+.subtitle {
+  margin-top: 0.6rem;
+  max-width: 64ch;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+}
+
+.panel,
+.card {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: linear-gradient(165deg, #fffefc 0%, var(--panel) 100%);
+  box-shadow: var(--shadow);
+}
+
+.panel {
+  padding: 1.2rem;
+}
+
+.query-form label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.55rem;
+}
+
+.query-row {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: 1fr auto;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 92px;
+  border-radius: 14px;
+  border: 1px solid #cfc6b7;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #fffcf7;
+}
+
+textarea:focus,
+button:focus {
+  outline: 2px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  outline-offset: 2px;
+}
+
+button {
+  border: 0;
+  border-radius: 14px;
+  padding: 0 1.2rem;
+  font-weight: 800;
+  cursor: pointer;
+  min-width: 150px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: white;
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+}
+
+button:disabled {
+  cursor: wait;
+  filter: grayscale(0.15) brightness(0.95);
+  transform: none;
+}
+
+.status {
+  margin-top: 0.9rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  border: 1px dashed #ccb787;
+  background: #fff6df;
+  font-weight: 600;
+}
+
+.status.error {
+  border-color: #df8a7a;
+  background: #fff1ed;
+}
+
+.results {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.card {
+  padding: 1rem 1.1rem;
+}
+
+.card h2,
+.card h3 {
+  margin-top: 0;
+  font-family: "Sora", sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.wide {
+  grid-column: 1 / -1;
+}
+
+.lead {
+  color: #2b2b2b;
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+
+.grid-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1rem;
+  line-height: 1.5;
+}
+
+li + li {
+  margin-top: 0.45rem;
+}
+
+.pill {
+  display: inline-block;
+  margin-top: 0.2rem;
+  margin-bottom: 0.45rem;
+  font-weight: 700;
+  border: 1px solid #bbcfc6;
+  border-radius: 999px;
+  padding: 0.3rem 0.72rem;
+  background: #f0faf7;
+}
+
+.muted {
+  color: #666;
+  margin: 0;
+}
+
+.bg-orb {
+  position: fixed;
+  z-index: 0;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  filter: blur(58px);
+  opacity: 0.32;
+  pointer-events: none;
+}
+
+.bg-orb-left {
+  left: -90px;
+  top: -110px;
+  background: #f5c04e;
+}
+
+.bg-orb-right {
+  right: -120px;
+  bottom: -120px;
+  background: #4ea9a9;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: rise 550ms ease forwards;
+}
+
+.delay-1 {
+  animation-delay: 120ms;
+}
+
+.delay-2 {
+  animation-delay: 240ms;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .query-row {
+    grid-template-columns: 1fr;
+  }
+
+  button {
+    min-height: 46px;
+  }
+
+  .grid-two {
+    grid-template-columns: 1fr;
+  }
+}
