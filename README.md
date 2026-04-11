@@ -1,6 +1,15 @@
 # Agentic AI Research App
 
-An agentic research system that plans a web search task, gathers sources, scrapes content, filters results, and synthesizes a structured answer. The project now has a clear frontend/backend split:
+An agentic research system that plans a web search task, gathers sources, scrapes content, filters results, and synthesizes a structured answer.
+
+## Demo Video
+
+A short walkthrough of the system, showing the agent pipeline (planning → search → scraping → synthesis) and example queries:
+
+👉 https://drive.google.com/file/d/1BTM7RtjRFJMayW-O6w-WTDiv3fSwWkyg/view?usp=sharing
+ 
+
+The project now has a clear frontend/backend split:
 
 - `backend/` contains the research pipeline and Flask server.
 - `frontend/` contains the browser UI.
