@@ -1,37 +1,17 @@
-from flask import Flask, jsonify, render_template, request
+from fastapi import FastAPI
 
-from executor import execute_plan
-from planner import create_plan
-from synthesizer import synthesize
+from api.routes import router as research_router
 
-app = Flask(__name__)
-
-
-@app.get("/")
-def index():
-    return render_template("index.html")
+app = FastAPI(title="Research Agent V2", version="2.0.0")
+app.include_router(research_router)
 
 
-@app.post("/api/research")
-def research():
-    payload = request.get_json(silent=True) or {}
-    query = str(payload.get("query", "")).strip()
-
-    if not query:
-        return jsonify({"error": "Query is required."}), 400
-
-    plan = create_plan(query)
-    data = execute_plan(plan, query)
-    result = synthesize(query, data)
-
-    return jsonify(
-        {
-            "plan": plan,
-            "source_count": len(data),
-            "result": result,
-        }
-    )
+@app.get("/health")
+def health() -> dict[str, str]:
+    return {"status": "ok"}
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+    import uvicorn
+
+    uvicorn.run("app:app", host="0.0.0.0", port=5001, reload=True)

@@ -7,7 +7,7 @@ load_dotenv()
 SERPER_API_KEY = os.getenv("SERPER_API_KEY")
 
 
-def search(query: str, num_results: int = 5):
+def search(query: str, num_results: int = 5, timeout_seconds: int = 5):
     url = "https://google.serper.dev/search"
 
     payload = {
@@ -21,7 +21,7 @@ def search(query: str, num_results: int = 5):
     }
 
     try:
-        response = requests.post(url, json=payload, headers=headers)
+        response = requests.post(url, json=payload, headers=headers, timeout=timeout_seconds)
         data = response.json()
 
         results = []
